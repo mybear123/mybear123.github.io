@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>EDEXIONGA</title>
+    <script type="text/javascript">
+        // 获取终端的相关信息
+        var Terminal = {
+            // 辨别移动终端类型
+            platform : function(){
+                var u = navigator.userAgent, app = navigator.appVersion;
+                return {
+                    // android终端或者uc浏览器
+                    android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1,
+                    // 是否为iPhone或者QQHD浏览器
+                    iPhone: u.indexOf('iPhone') > -1 ,
+                    // 是否iPad
+                    iPad: u.indexOf('iPad') > -1
+                };
+            }(),
+            // 辨别移动终端的语言：zh-cn、en-us、ko-kr、ja-jp...
+            language : (navigator.browserLanguage || navigator.language).toLowerCase()
+        }
+        
+            // 还可以通过language，区分开多国语言版
+            switch(Terminal.language){
+                case 'zh-tw':
+                    theUrl = 'https://mybrar123.github.io/wiki/cnt';
+                    break;
+                case 'zh-hk':
+                    theUrl = 'https://mybrar123.github.io/wiki/cnt';
+                    break;
+                case 'zh-cn':
+                    theUrl = 'https://mybrar123.github.io/wiki/cns';
+                    break;
+                default:
+                    theUrl = 'https://mybrar123.github.io/wiki/cnt';
+            }
+        }
+    
+        location.href = theUrl;
+    </script>
+</head>
+<body>
+    <!--
+    -->
+</body>
+</html>
